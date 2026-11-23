@@ -7,9 +7,9 @@ app = FastAPI(title="QR Code Generator API")
 
 @app.get("/generate-qr")
 def generate_qr(
-    data: str = Query(..., description="Il testo o l'URL da convertire in QR Code"),
-    size: int = Query(10, description="La dimensione dei quadratini del QR (default: 10)"),
-    color: str = Query("black", description="Il colore del QR Code (es. 'black', 'blue', 'red')")
+    data: str = Query(..., description="The text or URL to convert into a QR Code"),
+    size: int = Query(10, description="The size of the QR code pixels (default: 10)"),
+    color: str = Query("black", description="The color of the QR Code (e.g., 'black', 'blue', 'red')")
 ):
     qr = qrcode.QRCode(
         version=1,
